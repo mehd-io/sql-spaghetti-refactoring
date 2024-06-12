@@ -1,0 +1,9 @@
+sql_ravioli:
+  outputs:
+    dev:
+      type: duckdb
+      path: ./data/tpch.ddb
+    prod:
+      type: duckdb
+      path: "md:"
+  target: dev

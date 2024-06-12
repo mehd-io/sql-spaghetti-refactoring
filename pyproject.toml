@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "sql-spaghetti-refactoring"
+version = "0.1.0"
+description = ""
+authors = ["Mehdi Ouazza <mehdi@mehd.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+duckdb = "^0.10.2"
+db-dtypes = "^1.1.1"
+dbt-duckdb = {version = "1.8.1", extras = ["md"]}
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+ruff = "^0.1.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+# google warning https://github.com/googleapis/google-cloud-python/issues/11184
+filterwarnings = [
+    "ignore:Deprecated call to `pkg_resources\\.declare_namespace\\('.*'\\):DeprecationWarning",
+    "ignore::DeprecationWarning:google.rpc",
+]

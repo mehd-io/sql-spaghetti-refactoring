@@ -1,0 +1,43 @@
+version: 2
+
+sources:
+  - name: tpch
+    schema: main
+    tables:
+      - name: customer
+        description: "Customer information from the TPC-H dataset."
+        columns:
+          - name: c_custkey
+            description: "Primary key of the customer."
+          - name: c_name
+            description: "Name of the customer."
+          - name: c_acctbal
+            description: "Account balance of the customer."
+          - name: c_mktsegment
+            description: "Market segment of the customer."
+
+      - name: orders
+        description: "Orders information from the TPC-H dataset."
+        columns:
+          - name: o_orderkey
+            description: "Primary key of the order."
+          - name: o_custkey
+            description: "Foreign key referencing customer key."
+          - name: o_orderdate
+            description: "Date of the order."
+          - name: o_totalprice
+            description: "Total price of the order."
+
+      - name: lineitem
+        description: "Line items of orders from the TPC-H dataset."
+        columns:
+          - name: l_orderkey
+            description: "Foreign key referencing order key."
+          - name: l_partkey
+            description: "Part key of the item."
+          - name: l_quantity
+            description: "Quantity of the item."
+          - name: l_extendedprice
+            description: "Extended price of the item."
+          - name: l_discount
+            description: "Discount on the item."
